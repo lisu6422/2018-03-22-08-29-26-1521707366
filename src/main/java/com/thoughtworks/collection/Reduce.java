@@ -30,7 +30,7 @@ public class Reduce {
     public double getAverage() {
         int count = 0;
         for (Integer integer : arrayList) {
-            count+=integer;
+            count += integer;
         }
         return count * 1.0D / arrayList.size();
     }
@@ -41,11 +41,11 @@ public class Reduce {
         Collections.sort(list);
 
         int size = list.size();
-        if(size % 2 == 0){
-            return (list.get(size/2 - 1) + list.get(size/2)) * 1.0D/2;
+        if (size % 2 == 0) {
+            return (list.get(size / 2 - 1) + list.get(size / 2)) * 1.0D / 2;
 
-        }else {
-            return list.get((size+1)/2 -1);
+        } else {
+            return list.get((size + 1) / 2 - 1);
         }
     }
 
@@ -63,7 +63,25 @@ public class Reduce {
 
     //实现接口SingleLink，然后再此函数内使用
     public Double getMedianInLinkList(SingleLink singleLink) {
-        throw new NotImplementedException();
+
+        for (Integer integer : arrayList) {
+            singleLink.addTailPointer(integer);
+        }
+
+        List<Integer> list = new ArrayList<>(arrayList);
+
+        singleLink.getNode(6);
+        singleLink.getNode(7);
+//        singleLink.addTailPointer(10);
+//        Collections.sort(list);
+
+        int size = list.size();
+        if (size % 2 == 0) {
+            return (list.get(size / 2 - 1) + list.get(size / 2)) * 1.0D / 2;
+
+        } else {
+            return list.get((size + 1) / 2 - 1) * 1.0D;
+        }
     }
 
     public int getLastOdd() {

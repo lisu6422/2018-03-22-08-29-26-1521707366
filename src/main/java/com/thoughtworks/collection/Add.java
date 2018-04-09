@@ -3,6 +3,7 @@ package com.thoughtworks.collection;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @SuppressWarnings("all")
@@ -77,15 +78,25 @@ public class Add {
     }
 
     public double getMedianOfEvenIndex(List<Integer> arrayList) {
-        double sum = 0.0D;
-        int count = 0;
+
+        List<Integer> even = new ArrayList<>();
         for (Integer integer : arrayList) {
             if(integer % 2 == 0){
-                sum += integer;
-                count++;
+                even.add(integer);
             }
         }
-        return sum/count;
+
+
+        Collections.sort(even);
+
+        int size = even.size();
+        if(size % 2 == 0){
+            return (even.get(size/2 - 1) + even.get(size/2)) * 1.0D/2;
+
+        }else {
+            return even.get((size+1)/2 -1);
+        }
+
     }
 
     public double getAverageOfEvenIndex(List<Integer> arrayList) {

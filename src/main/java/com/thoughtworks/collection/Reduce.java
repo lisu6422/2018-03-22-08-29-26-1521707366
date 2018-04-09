@@ -36,7 +36,17 @@ public class Reduce {
     }
 
     public double getOrderedMedian() {
-        throw new NotImplementedException();
+        List<Integer> list = new ArrayList<>(arrayList);
+
+        Collections.sort(list);
+
+        int size = list.size();
+        if(size % 2 == 0){
+            return (list.get(size/2 - 1) + list.get(size/2)) * 1.0D/2;
+
+        }else {
+            return list.get((size+1)/2 -1);
+        }
     }
 
     public int getFirstEven() {

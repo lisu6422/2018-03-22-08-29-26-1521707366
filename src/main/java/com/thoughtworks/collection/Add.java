@@ -4,6 +4,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
 
+@SuppressWarnings("all")
 public class Add {
     public int getSumOfEvens(int leftBorder, int rightBorder) {
 
@@ -25,7 +26,21 @@ public class Add {
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
-        throw new NotImplementedException();
+        int left = leftBorder;
+        int right = rightBorder;
+        if(left > right){
+            left = rightBorder;
+            right = leftBorder;
+        }
+
+        int count = 0;
+        for (int i = left; i <= right; i++) {
+            if (i % 2 != 0) {
+                count = count + i;
+                i++;
+            }
+        }
+        return count;
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {

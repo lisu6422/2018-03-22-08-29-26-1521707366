@@ -120,7 +120,8 @@ public class Add {
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
-        throw new NotImplementedException();
+        List<Integer> even = getList(arrayList,0);
+        return even.contains(specialElment);
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
@@ -135,6 +136,17 @@ public class Add {
         List<Integer> result = new ArrayList<>(arrayList.size());
         for (int i = 0; i < arrayList.size() - 1; i++) {
             result.add((arrayList.get(i) + arrayList.get(i+1)) * 3);
+        }
+        return result;
+    }
+
+
+    private List<Integer> getList(List<Integer> list,int seed){
+        List<Integer> result = new ArrayList<>();
+        for (Integer integer : list) {
+            if(integer % 2 == seed){
+                result.add(integer);
+            }
         }
         return result;
     }

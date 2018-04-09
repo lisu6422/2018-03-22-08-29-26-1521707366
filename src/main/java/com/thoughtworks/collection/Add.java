@@ -130,7 +130,21 @@ public class Add {
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
-        throw new NotImplementedException();
+
+        List<Integer> result = new ArrayList<>();
+
+        List<Integer> even = getList(arrayList,0);
+        List<Integer> odd = getList(arrayList,1);
+
+        Collections.sort(even);
+        Collections.sort(odd);
+        Collections.reverse(odd);
+        result.clear();
+        result.addAll(even);
+        result.addAll(odd);
+        return result;
+
+
     }
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {

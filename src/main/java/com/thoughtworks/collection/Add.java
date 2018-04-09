@@ -4,6 +4,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 
 @SuppressWarnings("all")
@@ -125,7 +126,7 @@ public class Add {
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        return new ArrayList<>(new HashSet<>(getList(arrayList,0)));
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {

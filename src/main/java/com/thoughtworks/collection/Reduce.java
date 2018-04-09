@@ -114,6 +114,8 @@ public class Reduce {
             if(arrayList.get(i) %2 != 0) return i;
         }
 
+
+
         return -1;
     }
 }

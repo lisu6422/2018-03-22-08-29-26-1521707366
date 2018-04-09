@@ -6,7 +6,22 @@ import java.util.List;
 
 public class Add {
     public int getSumOfEvens(int leftBorder, int rightBorder) {
-        throw new NotImplementedException();
+
+        int left = leftBorder;
+        int right = rightBorder;
+        if(left > right){
+            left = rightBorder;
+            right = leftBorder;
+        }
+
+        int count = 0;
+        for (int i = left; i <= right; i++) {
+            if (i % 2 == 0) {
+                count = count + i;
+                i++;
+            }
+        }
+        return count;
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {

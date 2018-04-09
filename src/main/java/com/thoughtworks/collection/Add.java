@@ -67,7 +67,13 @@ public class Add {
     }
 
     public int getSumOfProcessedOdds(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        int count = 0;
+        for (Integer integer : arrayList) {
+            if(integer % 2 != 0){
+                count += (integer * 3 + 5);
+            }
+        }
+        return count;
     }
 
     public double getMedianOfEvenIndex(List<Integer> arrayList) {

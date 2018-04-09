@@ -50,7 +50,11 @@ public class Reduce {
     }
 
     public int getFirstEven() {
-        throw new NotImplementedException();
+        for (Integer integer : arrayList) {
+            if(integer % 2 == 0) return integer;
+        }
+
+        return 0;
     }
 
     public int getIndexOfFirstEven() {

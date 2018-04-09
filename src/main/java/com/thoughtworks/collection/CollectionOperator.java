@@ -61,7 +61,18 @@ public class CollectionOperator {
     }
 
     public List<Integer> popCommonElement(int[] firstArray, int[] secondArray) {
-        throw new NotImplementedException();
+        List<Integer> result = new ArrayList<>();
+        List<Integer> firstList = new ArrayList<>();
+
+        for (int i : firstArray) {
+            firstList.add(i);
+        }
+        for (int i : secondArray) {
+            if(firstList.contains(i)){
+                result.add(i);
+            }
+        }
+        return result;
     }
 
     public List<Integer> addUncommonElement(Integer[] firstArray, Integer[] secondArray) {

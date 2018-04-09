@@ -44,7 +44,12 @@ public class Add {
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        int count = 0;
+        for (Integer item:arrayList){
+            count += (item * 3 + 2);
+        }
+
+        return count;
     }
 
     public List<Integer> getTripleOfOddAndAddTwo(List<Integer> arrayList) {

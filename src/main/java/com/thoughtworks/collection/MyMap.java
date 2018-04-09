@@ -28,13 +28,34 @@ public class MyMap {
     public List<String> mapLetter() {
         List<String> result = new ArrayList<>();
         for (Integer integer : array) {
-            result.add(letterList.get(integer-1));
+            result.add(letterList.get(integer - 1));
         }
         return result;
     }
 
     public List<String> mapLetters() {
-        throw new NotImplementedException();
+        List<String> result = new ArrayList<>();
+        for (Integer integer : array) {
+            int firstIndex = 0;
+            int secondIndex = -1;
+
+            if (integer > letterList.size()) {
+                firstIndex = (integer-1) / letterList.size() - 1;
+                secondIndex = (integer - 1) % letterList.size();
+            } else {
+                firstIndex = integer - 1;
+            }
+
+            if(secondIndex == -1){
+                result.add(letterList.get(firstIndex));
+            }else {
+                result.add(letterList.get(firstIndex) + letterList.get(secondIndex));
+            }
+
+
+
+        }
+        return result;
     }
 
     public List<Integer> sortFromBig() {

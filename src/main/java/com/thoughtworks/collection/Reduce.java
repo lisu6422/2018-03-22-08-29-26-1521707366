@@ -2,6 +2,8 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Reduce {
@@ -13,7 +15,10 @@ public class Reduce {
     }
 
     public int getMaximum() {
-        throw new NotImplementedException();
+        List<Integer> list = new ArrayList<>(arrayList);
+        Collections.sort(list);
+        Collections.reverse(list);
+        return list.get(0);
     }
 
     public double getMinimum() {

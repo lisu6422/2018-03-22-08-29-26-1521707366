@@ -100,7 +100,23 @@ public class Add {
     }
 
     public double getAverageOfEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> even = new ArrayList<>();
+        for (Integer integer : arrayList) {
+            if(integer % 2 == 0){
+                even.add(integer);
+            }
+        }
+
+        double sum = 0.0D;
+        int count = 0;
+        for (Integer integer : even) {
+            if(integer % 2 == 0){
+                sum+=integer;
+                count++;
+            }
+        }
+
+        return sum/count;
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {

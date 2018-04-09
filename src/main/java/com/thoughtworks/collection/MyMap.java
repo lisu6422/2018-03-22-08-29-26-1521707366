@@ -66,6 +66,8 @@ public class MyMap {
     }
 
     public List<Integer> sortFromSmall() {
-        throw new NotImplementedException();
+        List<Integer> result = new ArrayList<>(array);
+        Collections.sort(result);
+        return result;
     }
 }

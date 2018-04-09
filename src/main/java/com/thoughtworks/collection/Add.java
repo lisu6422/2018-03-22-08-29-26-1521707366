@@ -77,7 +77,15 @@ public class Add {
     }
 
     public double getMedianOfEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        double sum = 0.0D;
+        int count = 0;
+        for (Integer integer : arrayList) {
+            if(integer % 2 == 0){
+                sum += integer;
+                count++;
+            }
+        }
+        return sum/count;
     }
 
     public double getAverageOfEvenIndex(List<Integer> arrayList) {

@@ -22,7 +22,9 @@ public class Reduce {
     }
 
     public double getMinimum() {
-        throw new NotImplementedException();
+        List<Integer> list = new ArrayList<>(arrayList);
+        Collections.sort(list);
+        return list.get(0);
     }
 
     public double getAverage() {
